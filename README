@@ -1,0 +1,97 @@
+davidillsley@David-Illsleys-MacBook-Pro ~/Development/casbah-jodaGridFs-prob
+$ sbt 'run FileRepository'
+[info] Set current project to casbah-jodaGridFs-prob (in build file:/Users/davidillsley/Development/casbah-jodaGridFs-prob/)
+[info] Updating {file:/Users/davidillsley/Development/casbah-jodaGridFs-prob/}default-12cd75...
+[info] Resolving org.mongodb#casbah-gridfs_2.10;2.5.1 ...
+[info] Done updating.
+[info] Compiling 1 Scala source to /Users/davidillsley/Development/casbah-jodaGridFs-prob/target/scala-2.10/classes...
+[info] Running Test FileRepository
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Apr 15, 2013 10:05:00 PM com.mongodb.DBPortPool gotError
+WARNING: emptying DBPortPool to /127.0.0.1:27017 b/c of error
+java.lang.ClassCastException: org.joda.time.DateTime cannot be cast to java.util.Date
+	at com.mongodb.gridfs.GridFSFile.put(GridFSFile.java:198)
+	at org.bson.BasicBSONCallback._put(BasicBSONCallback.java:174)
+	at org.bson.BasicBSONCallback.gotDate(BasicBSONCallback.java:126)
+	at org.bson.BasicBSONDecoder.decodeElement(BasicBSONDecoder.java:171)
+	at org.bson.BasicBSONDecoder._decode(BasicBSONDecoder.java:79)
+	at org.bson.BasicBSONDecoder.decode(BasicBSONDecoder.java:57)
+	at com.mongodb.DefaultDBDecoder.decode(DefaultDBDecoder.java:56)
+	at com.mongodb.Response.<init>(Response.java:83)
+	at com.mongodb.DBPort.go(DBPort.java:124)
+	at com.mongodb.DBPort.call(DBPort.java:74)
+	at com.mongodb.DBTCPConnector.innerCall(DBTCPConnector.java:286)
+	at com.mongodb.DBTCPConnector.call(DBTCPConnector.java:257)
+	at com.mongodb.DBApiLayer$MyCollection.__find(DBApiLayer.java:310)
+	at com.mongodb.DBApiLayer$MyCollection.__find(DBApiLayer.java:295)
+	at com.mongodb.DBCollection.findOne(DBCollection.java:727)
+	at com.mongodb.DBCollection.findOne(DBCollection.java:669)
+	at com.mongodb.gridfs.GridFS.findOne(GridFS.java:166)
+	at com.mongodb.gridfs.GridFS.findOne(GridFS.java:148)
+	at com.mongodb.casbah.gridfs.JodaGridFS.findOne(JodaGridFS.scala:230)
+	at FileRepository.getFileFromMongo(FileRepository.scala:45)
+	at Test$delayedInit$body.apply(FileRepository.scala:19)
+	at scala.Function0$class.apply$mcV$sp(Function0.scala:40)
+	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:12)
+	at scala.App$$anonfun$main$1.apply(App.scala:71)
+	at scala.App$$anonfun$main$1.apply(App.scala:71)
+	at scala.collection.immutable.List.foreach(List.scala:318)
+	at scala.collection.generic.TraversableForwarder$class.foreach(TraversableForwarder.scala:32)
+	at scala.App$class.main(App.scala:71)
+	at Test$.main(FileRepository.scala:15)
+	at Test.main(FileRepository.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at sbt.Run.invokeMain(Run.scala:68)
+	at sbt.Run.run0(Run.scala:61)
+	at sbt.Run.execute$1(Run.scala:50)
+	at sbt.Run$$anonfun$run$1.apply$mcV$sp(Run.scala:54)
+	at sbt.TrapExit$.executeMain$1(TrapExit.scala:33)
+	at sbt.TrapExit$$anon$1.run(TrapExit.scala:42)
+
+[error] (run-main) java.lang.ClassCastException: org.joda.time.DateTime cannot be cast to java.util.Date
+java.lang.ClassCastException: org.joda.time.DateTime cannot be cast to java.util.Date
+	at com.mongodb.gridfs.GridFSFile.put(GridFSFile.java:198)
+	at org.bson.BasicBSONCallback._put(BasicBSONCallback.java:174)
+	at org.bson.BasicBSONCallback.gotDate(BasicBSONCallback.java:126)
+	at org.bson.BasicBSONDecoder.decodeElement(BasicBSONDecoder.java:171)
+	at org.bson.BasicBSONDecoder._decode(BasicBSONDecoder.java:79)
+	at org.bson.BasicBSONDecoder.decode(BasicBSONDecoder.java:57)
+	at com.mongodb.DefaultDBDecoder.decode(DefaultDBDecoder.java:56)
+	at com.mongodb.Response.<init>(Response.java:83)
+	at com.mongodb.DBPort.go(DBPort.java:124)
+	at com.mongodb.DBPort.call(DBPort.java:74)
+	at com.mongodb.DBTCPConnector.innerCall(DBTCPConnector.java:286)
+	at com.mongodb.DBTCPConnector.call(DBTCPConnector.java:257)
+	at com.mongodb.DBApiLayer$MyCollection.__find(DBApiLayer.java:310)
+	at com.mongodb.DBApiLayer$MyCollection.__find(DBApiLayer.java:295)
+	at com.mongodb.DBCollection.findOne(DBCollection.java:727)
+	at com.mongodb.DBCollection.findOne(DBCollection.java:669)
+	at com.mongodb.gridfs.GridFS.findOne(GridFS.java:166)
+	at com.mongodb.gridfs.GridFS.findOne(GridFS.java:148)
+	at com.mongodb.casbah.gridfs.JodaGridFS.findOne(JodaGridFS.scala:230)
+	at FileRepository.getFileFromMongo(FileRepository.scala:45)
+	at Test$delayedInit$body.apply(FileRepository.scala:19)
+	at scala.Function0$class.apply$mcV$sp(Function0.scala:40)
+	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:12)
+	at scala.App$$anonfun$main$1.apply(App.scala:71)
+	at scala.App$$anonfun$main$1.apply(App.scala:71)
+	at scala.collection.immutable.List.foreach(List.scala:318)
+	at scala.collection.generic.TraversableForwarder$class.foreach(TraversableForwarder.scala:32)
+	at scala.App$class.main(App.scala:71)
+	at Test$.main(FileRepository.scala:15)
+	at Test.main(FileRepository.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+[trace] Stack trace suppressed: run last compile:run for the full output.
+java.lang.RuntimeException: Nonzero exit code: 1
+	at scala.sys.package$.error(package.scala:27)
+[trace] Stack trace suppressed: run last compile:run for the full output.
+[error] (compile:run) Nonzero exit code: 1
+[error] Total time: 9 s, completed 15-Apr-2013 22:05:00
